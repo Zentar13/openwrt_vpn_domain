@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Настройки OpenWrt VPN Manager</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Настройки OpenWrt VPN Manager</h2>
+    
+    <div class="setting-group">
+      <label for="serverUrl">URL сервера:</label>
+      <input type="text" id="serverUrl" placeholder="192.168.10.1">
+      <div class="help-text">
+        Введите IP-адрес или доменное имя вашего OpenWrt роутера (без http://)
+      </div>
+    </div>
+    
+    <div class="setting-group">
+      <label for="serverPort">Порт (необязательно):</label>
+      <input type="number" id="serverPort" placeholder="80" min="1" max="65535">
+      <div class="help-text">
+        Оставьте пустым для использования стандартного порта 80
+      </div>
+    </div>
+    
+    <div class="button-group">
+      <button id="saveBtn">💾 Сохранить настройки</button>
+      <button id="testBtn">🔍 Проверить подключение</button>
+      <button id="resetBtn" class="reset-btn">↺ Сбросить к умолчаниям</button>
+    </div>
+    
+    <div id="status">Введите настройки сервера</div>
+    
+    <div class="info-section">
+      <h3>Информация</h3>
+      <p>Это расширение позволяет управлять доменами в ipset на роутере OpenWrt через веб-интерфейс.</p>
+      <p>Убедитесь, что на роутере настроен скрипт <code>update_domain.sh</code> в папке <code>/cgi-bin/</code>.</p>
+    </div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>

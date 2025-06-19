@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "OpenWrt VPN manager",
+  "version": "1.7",
+  "description": "Управление доменами в ipset OpenWrt",
+  
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{7d36642e-7d7e-4107-a3de-7cae3c7d2a5c}"
+    }
+  },
+  
+  "permissions": [
+    "tabs", 
+    "activeTab",
+    "storage",
+    "http://*/*",
+    "https://*/*"
+  ],
+  
+  "content_security_policy": "default-src 'self'; connect-src http://* https://*; style-src 'self' 'unsafe-inline';",
+  
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  
+  "options_page": "options.html",
+  
+  "icons": {
+    "128": "icon.png"
+  }
+}
