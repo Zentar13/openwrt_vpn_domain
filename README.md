@@ -1,0 +1,1 @@
+# openwrt_vpn_domain
