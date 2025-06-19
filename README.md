@@ -34,7 +34,8 @@ extension/
 ├── options.html          # Страница настроек
 ├── options.css           # Стили страницы настроек
 ├── options.js            # Логика страницы настроек
-└── icon.png              # Иконка расширения (необходимо добавить)
+├── update_domain.sh      # бэкенд для openwrt в /www/cgi-bin/
+└── icon.png              # Иконка расширения 
 ```
 
 ## Установка расширения
@@ -62,6 +63,16 @@ extension/
    - С портом: `192.168.1.1:8080`
 5. **Нажмите "Проверить подключение"** для тестирования
 6. **Сохраните настройки**
+
+## Настройка на стороне OpenWrt
+
+1. Скопировать update_domain.sh в /www/cgi-bin
+2. в файле конфигурации /etc/config/uhttpd
+   добавить в секцию
+      config uhttpd 'main'
+         option cgi_prefix '/cgi-bin'
+         list interpreter '.sh=/bin/sh'
+3. выполнить service uhttpd restart
 
 ## Использование
 
